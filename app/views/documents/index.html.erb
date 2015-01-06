@@ -1,0 +1,27 @@
+<% unless @sales.empty? %>
+  <h3>Lista de vendas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome do comprador</th>
+        <th>Descrição do item</th>
+        <th>Preço do item</th>
+        <th>Número de compras</th>
+        <th>Endereço do comerciante</th>
+        <th>Nome do comerciante</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.purchaser_name %></td>
+        <td><%= sale.item_description %></td>
+        <td><%= sale.item_price %></td>
+        <td><%= sale.purchase_count %></td>
+        <td><%= sale.merchant_address %></td>
+        <td><%= sale.merchant_name %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
