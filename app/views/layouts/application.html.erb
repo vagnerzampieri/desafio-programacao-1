@@ -9,6 +9,10 @@
   </head>
   <body>
     <div class='row'>
+      <% if current_user.present? %>
+        <p>Olá <%= current_user.name %> - <%= link_to 'Sair', logout_path %></p>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
