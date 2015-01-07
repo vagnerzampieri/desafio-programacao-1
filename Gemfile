@@ -18,6 +18,7 @@ gem 'jquery-rails',   '4.0.3'
 gem 'turbolinks',     '2.5.3'
 gem 'carrierwave',    '0.10.0'
 gem 'foundation-rails', '5.4.5.0'
+gem 'omniauth-github', '1.1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
