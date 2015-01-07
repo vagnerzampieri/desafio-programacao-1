@@ -4,6 +4,7 @@ RSpec.describe DocumentsController do
   describe 'POST create' do
     context 'with valid attributes' do
       before do
+        session[:user_id] = FactoryGirl.create(:user).id
         filepath = Rack::Test::UploadedFile.new([Rails.root, 'example_input.tab'].join('/'))
         post :create, { document: { file: filepath } }
       end
@@ -16,6 +17,7 @@ RSpec.describe DocumentsController do
 
     context 'with invalid attributes' do
       before do
+        session[:user_id] = FactoryGirl.create(:user).id
         post :create, { document: { file: '' } }
       end
 
