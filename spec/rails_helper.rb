@@ -25,6 +25,15 @@ require 'rspec/rails'
 require 'simplecov'
 SimpleCov.start 'rails'
 
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:github] = {
+  'provider' => 'github',
+  'uid' => '444419',
+  'info' => {
+    'name' => 'Vagner Zampieri'
+  }
+}
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|

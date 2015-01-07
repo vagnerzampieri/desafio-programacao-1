@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe DocumentsController do
   describe 'GET index' do
     before do
+      session[:user_id] = FactoryGirl.create(:user).id
       @sales = Sale.create
       get :index
     end
